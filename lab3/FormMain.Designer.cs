@@ -417,7 +417,6 @@
             // 
             // SaveTextToolStripMenuItem
             // 
-            this.SaveTextToolStripMenuItem.Enabled = false;
             this.SaveTextToolStripMenuItem.Name = "SaveTextToolStripMenuItem";
             this.SaveTextToolStripMenuItem.Size = new System.Drawing.Size(317, 30);
             this.SaveTextToolStripMenuItem.Text = "Сохранить данные в файл";
@@ -425,7 +424,6 @@
             // 
             // OpenTableToolStripMenuItem
             // 
-            this.OpenTableToolStripMenuItem.Enabled = false;
             this.OpenTableToolStripMenuItem.Name = "OpenTableToolStripMenuItem";
             this.OpenTableToolStripMenuItem.Size = new System.Drawing.Size(317, 30);
             this.OpenTableToolStripMenuItem.Text = "Открыть таблицу значений";

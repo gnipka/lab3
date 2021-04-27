@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 using Excel = Microsoft.Office.Interop.Excel;
 using EasyXLS;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace lab3
 {
@@ -29,6 +31,7 @@ namespace lab3
                 Excel.Application ExcelApp = new Excel.Application();
                 Excel.Workbook ExcelWorkBook;
                 Excel.Worksheet ExcelWorkSheet;
+                Image image = Image.FromFile("C:\\Users\\admin\\Desktop\\lab3\\chart.jpeg");
 
                 //Построение книги
                 ExcelWorkBook = ExcelApp.Workbooks.Add(System.Reflection.Missing.Value);
@@ -42,14 +45,12 @@ namespace lab3
                         ExcelApp.Cells[i + 1, j + 1] = dataGridViewTable.Rows[i].Cells[j].Value;
                     }
                 }
+                ExcelWorkSheet.Range["A2"].Value = image;
                 ExcelApp.Visible = true;
                 ExcelApp.UserControl = true;
                 ExcelWorkBook = ExcelApp.Workbooks.Add(Type.Missing);
                 ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ExcelWorkBook.ActiveSheet;
-
-                //Add picture to single sheet1
-                ExcelWorkSheet = (Worksheet)ExcelWorkBook.Sheets[1];
-                ExcelWorkSheet.Name = "Graph with Report";
+                ExcelWorkBook.SaveAs(Path.Combine(Environment.CurrentDirectory, "C:\\Users\\admin\\Desktop"));
             }
             catch
             {
