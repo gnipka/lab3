@@ -58,6 +58,15 @@ namespace lab3
 
             CalcFuncOvalCassini calcFunc = new CalcFuncOvalCassini();
             value = calcFunc.Calc(leftBorder, rightBorder, lowerBorder, upperBorder, x, yPlus, yMinus, coefA, coefC, step, chart1);
+            try
+            {
+                System.IO.File.Delete(@"C:\Users\admin\Desktop\lab3\\chart.jpeg");
+            }
+            catch
+            {
+
+            }
+            this.chart1.SaveImage(@"C:\Users\admin\Desktop\lab3\\chart.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
 
 
 
