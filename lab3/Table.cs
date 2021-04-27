@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-
+using EasyXLS;
+using Microsoft.Office.Interop.Excel;
 
 namespace lab3
 {
@@ -43,6 +44,12 @@ namespace lab3
                 }
                 ExcelApp.Visible = true;
                 ExcelApp.UserControl = true;
+                ExcelWorkBook = ExcelApp.Workbooks.Add(Type.Missing);
+                ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ExcelWorkBook.ActiveSheet;
+
+                //Add picture to single sheet1
+                ExcelWorkSheet = (Worksheet)ExcelWorkBook.Sheets[1];
+                ExcelWorkSheet.Name = "Graph with Report";
             }
             catch
             {
